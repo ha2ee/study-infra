@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discord-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discord-backend
+  template:
+    metadata:
+      labels:
+        app: discord-backend
+    spec: # 이 줄의 들여쓰기 수정 (template 아래에 있어야 함)
+      containers:
+        - name: discord-backend
+          image: discord-clone-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_URI
+              value: mongodb://mongo-service:27017/chat

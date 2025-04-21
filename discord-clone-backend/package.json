@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "discord-clone-backend": "file:",
     "express": "^5.1.0",
     "mongoose": "^8.13.2",
     "socket.io": "^4.8.1"
